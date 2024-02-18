@@ -1,16 +1,12 @@
-fx_version 'bodacious'
+fx_version 'cerulean'
+game 'gta5'
 
-resource_manifest {
-  server_scripts = {
-    "main.lua"
-  },
-  client_scripts = {}
-}
+author 'Tu Nombre'
+description 'Rich Presence para FiveM'
+version '1.0.0'
 
-file_version '1.0.0'
-
-description 'FiveM Rich Presence para Discord, que muestra la información del servidor y el número de jugadores.'
+client_script 'client.lua' -- Nombre del archivo que contiene el script cliente
 
 dependencies {
-  "discord" -- Esto supone que tienes la biblioteca de discordia instalada en tu servidor.
+    'discord'
 }
