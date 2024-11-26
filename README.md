@@ -23,4 +23,4 @@ Conexión a un servidor FiveM.
 Instalación:
 Descarga o clona este repositorio en tu carpeta resources del servidor FiveM:
 
-git clone https://github.com/tu-repositorio/fivem-rich-presence.git
+git clone https://github.com/Dilan1x/fivem-rich-presence.git
