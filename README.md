@@ -1,26 +1,26 @@
-# fivem-discord-rich-presence
-
-Este script permite mostrar información del servidor de FiveM en el Rich Presence de Discord, incluyendo el nombre del servidor, la cantidad de jugadores conectados y un logo personalizado.
+FiveM Rich Presence
+Este script permite añadir un Rich Presence personalizado para tu servidor de FiveM, mostrando información dinámica en el perfil de Discord de los jugadores mientras están conectados al servidor.
 
 Características:
 
-Muestra el estado del jugador como "Jugando a FiveM".
-Muestra el nombre del servidor en el Rich Presence.
-Muestra la cantidad de jugadores conectados en el Rich Presence.
-Actualiza el conteo de jugadores en tiempo real.
-Admite logos personalizados.
-Fácil de instalar y configurar.
-Este script es ideal para servidores de FiveM que buscan:
+🎮 Información en tiempo real:
+Nombre del jugador.
+Número actual de jugadores y el máximo permitido.
 
-Mejorar la visibilidad del servidor en Discord.
-Informar a los jugadores sobre la cantidad de jugadores conectados.
-Dar a los jugadores una experiencia más atractiva en Discord.
-Cómo usar:
+🖼️ Imágenes personalizadas:
+Iconos grandes y pequeños con texto emergente al pasar el cursor.
+🔗 Botones interactivos:
+Hasta 2 botones configurables para redirigir a sitios web, Discord, u otros recursos.
 
-Clona este repositorio en tu servidor de FiveM.
-Edita el archivo main.lua para configurar tu ID de aplicación de Discord, el nombre del servidor, la URL del servidor y la ruta del archivo de logo.
-Inicia el servidor de FiveM.
-Enlaces:
+🛠️ Fácil configuración:
+Todo se configura desde un sencillo script en Lua.
+Compatible con cualquier servidor de FiveM.
 
-Documentación de la API de Discord: https://discordapp.com/developers/docs/rich-presence/how-to
+Requisitos:
+Una aplicación en Discord Developer Portal con Rich Presence configurado.
+Conexión a un servidor FiveM.
 
+Instalación:
+Descarga o clona este repositorio en tu carpeta resources del servidor FiveM:
+
+git clone https://github.com/tu-repositorio/fivem-rich-presence.git
