@@ -1,4 +1,4 @@
-FiveM Rich Presence
+FiveM Rich Presence - Oficial
 Este script permite añadir un Rich Presence personalizado para tu servidor de FiveM, mostrando información dinámica en el perfil de Discord de los jugadores mientras están conectados al servidor.
 
 Características:
