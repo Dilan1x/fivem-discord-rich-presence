@@ -1,65 +1,33 @@
-local appid = 'appid' 
-local image1 = 'image'
-local image2 = 'image'
-local prevtime = GetGameTimer()
-local prevframes = GetFrameCount()
-local fps = -1
-
-CreateThread(function()
-  while not NetworkIsPlayerActive(PlayerId()) or not NetworkIsSessionStarted() do         
-    Wait(500)
-    prevframes = GetFrameCount()
-    prevtime = GetGameTimer()            
-    end
-
-  while true do         
-    curtime = GetGameTimer()
-      curframes = GetFrameCount()       
-        
-      if((curtime - prevtime) > 1000) then
-          fps = (curframes - prevframes) - 1                
-          prevtime = curtime
-          prevframes = curframes
-      end      
-    Wait(350)
-  end    
-end)
-
-function players()
-  local players = {}
-
-  for i = 0, 62 do
-      if NetworkIsPlayerActive(i) then
-          table.insert(players, i)
-      end
-  end
-
-  return players
-end
-
-function SetRP()
-  local name = GetPlayerName(PlayerId())
-  local id = GetPlayerServerId(PlayerId())
-
-  SetDiscordAppId(appid)
-  SetDiscordRichPresenceAsset(image1)
-  SetDiscordRichPresenceAssetSmall(image2)
-end
-
+-- Configuración de Discord Rich Presence
 Citizen.CreateThread(function()
-  while true do
+    -- Reemplaza con el Client ID de tu aplicación en Discord
+    local appId = 'TU_CLIENT_ID_AQUI'
 
-  Citizen.Wait(1)
-    SetRP()
-    SetDiscordRichPresenceAssetText('discord.gg/ejemplo')
-      players = {}
-      for i = 0, 128 do
-          if NetworkIsPlayerActive( i ) then
-              table.insert( players, i )
-          end
-      end
-    SetRichPresence("FPS: " ..fps.. " | Usuario: " ..GetPlayerName(PlayerId()) .. "")
+    -- Configuración inicial
+    SetDiscordAppId(appId)
 
-    SetDiscordRichPresenceAction(0, "Discord", "https://discord.gg/ejemplo")
-end
+    -- Imagen grande (nombre del asset en Rich Presence)
+    SetDiscordRichPresenceAsset('nombre_imagen_grande')
+    SetDiscordRichPresenceAssetText('Tu Servidor Roleplay') -- Texto al pasar el ratón
+
+    -- Imagen pequeña (opcional)
+    SetDiscordRichPresenceAssetSmall('nombre_imagen_pequeña')
+    SetDiscordRichPresenceAssetSmallText('Servidor Activo')
+
+    -- Añadir botones
+    SetDiscordRichPresenceAction(0, "Únete a Discord", "https://discord.gg/TU_INVITACION_AQUI")
+    SetDiscordRichPresenceAction(1, "Visita nuestra web", "https://tu-sitio-web.com")
+
+    while true do
+        -- Actualizar el Rich Presence con información dinámica
+        local playerName = GetPlayerName(PlayerId())
+        local playerCount = #GetActivePlayers()
+        local maxPlayers = 64 -- Cambia esto según tu configuración del servidor
+
+        -- Establecer el texto personalizado
+        SetRichPresence(string.format('%s | %d/%d jugadores', playerName, playerCount, maxPlayers))
+
+        -- Actualizar cada 15 segundos
+        Citizen.Wait(15000)
+    end
 end)
