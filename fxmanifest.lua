@@ -8,3 +8,4 @@ version '1.1.0'
 client_scripts {
     'client.lua'
 }
+
